@@ -1,0 +1,66 @@
+{% extends 'crm/layout.html' %} 
+{% block head %} 
+    <title>User</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total Orders</h5>
+                    <p class="card-text">{{ ordersCount }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Orders Delivered</h5>
+                    <p class="card-text">{{ ordersDelivered }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Orders Pending</h5>
+                    <p class="card-text">{{ ordersPending }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card mt-5">
+    <div class="card-body">
+      <h5 class="card-title">Orders</h5>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Note</th>
+              <th scope="col">Date Ordered</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in orders %}
+            <tr>
+              <td>{{ order.product }}</td>
+              <td>{{ order.note }}</td>
+              <td>{{ order.date_created }}</td>
+              <td>{{ order.status }}</td>
+              <!-- <td><a href="{% url 'updateOrder' order.id %}" class="btn btn-primary btn-sm">Update</a></td> -->
+              <!-- <td><a href="{% url 'deleteOrder' order.id %}" class="btn btn-danger btn-sm">Remove</a></td> -->
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

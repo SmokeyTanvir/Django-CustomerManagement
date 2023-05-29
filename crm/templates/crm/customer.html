@@ -1,0 +1,63 @@
+{% extends 'crm/layout.html' %}
+{% load static %} <!-- Add this line if you want to use static files -->
+
+{% block title %}Customer{% endblock %}
+
+{% block body %} 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Customer: {{ customer.name }}</h5>
+          <hr>                
+          <a href="#" class="btn btn-outline-info btn-sm btn-block">Update Customer</a>
+          <br>
+          <a href="{% url 'create_order' customer.id %}" class="btn btn-outline-info btn-sm btn-block">Place Order</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Contact Information</h5>
+          <hr>
+          <p class="card-text">Email: {{ customer.email }}</p>
+          <p class="card-text">Phone: {{ customer.phone }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center">Total Orders</h5>
+          <hr>
+          <h1 class="card-text text-center">{{ total_orders }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Search Orders</h5>
+          <form method="get" class="form-inline">
+            <div class="input-group">
+              {{ myfilter.form }} 
+              <div class="input-group-append">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button> <!-- Add margin and padding classes to the search button -->
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  Puser
+</div>
+{% endblock %}

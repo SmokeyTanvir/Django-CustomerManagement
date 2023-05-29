@@ -1,0 +1,20 @@
+{% extends 'crm/layout.html' %}
+
+{% block head %}
+<title>Are you sure to delete?</title>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <p>Are you sure you want to delete "{{ item }}"? </p>
+            <form action="{% url 'deleteOrder' item.id %}" method="POST">
+                {% csrf_token %}
+                <a class="btn btn-warning" href="{% url 'index' %}">Cancel</a>
+                <input class="btn btn-danger" type="submit" name="confirm">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
