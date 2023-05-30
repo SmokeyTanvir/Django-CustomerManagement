@@ -49,6 +49,11 @@
                                 {% endfor %}
                             </div>
                             {% endif %}
+
+                            <div class="form-group">
+                                <a href="{% url 'reset_password' %}" class="btn btn-link">Forgot your password?</a>
+                            </div>
+
                             <input class="btn btn-primary" type="submit" value="Login">
                         </form>
 

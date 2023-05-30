@@ -112,10 +112,8 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-            group = Group.objects.get(name='customer')
-            Customer.objects.create(user=user)
-            user.groups.add(group)
-
+            username = form.cleaned_data.get('username')
+            messages.success(request, f"Account was successfully created for {username}")
             return redirect('login')
             
     context = {
@@ -178,7 +176,7 @@ def accountSettings(request):
     form = CustomerForm(instance=customer)
 
     if request.method == 'POST':
-        form = CustomerForm(request.POST,request.FILES, instance=customer)
+        form = CustomerForm(request.POST, request.FILES, instance=customer)
         if form.is_valid():
             form.save()
 

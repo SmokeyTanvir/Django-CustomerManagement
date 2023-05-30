@@ -16,7 +16,7 @@ Welcome to my Django project! This project serves as an example of a web applica
 1. Clone the repository: ```git clone https://github.com/SmokeyTanvir/Django-CustomerManagement.git```
 2. Navigate to the project directory ```cd Django-CustomerManagement```
 3. Make migrations: ```python manage.py makemigrations```
-4. Migrate the database: ``python manage.py migrate```
+4. Migrate the database: ```python manage.py migrate```
 5. Run the Django development server: ```python manage.py runserver```
 6. Access the application in your web browser at `http://localhost:8000`.
 
