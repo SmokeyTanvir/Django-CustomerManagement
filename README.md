@@ -17,8 +17,10 @@ Welcome to my Django project! This project serves as an example of a web applica
 2. Navigate to the project directory ```cd Django-CustomerManagement```
 3. Make migrations: ```python manage.py makemigrations```
 4. Migrate the database: ```python manage.py migrate```
-5. Run the Django development server: ```python manage.py runserver```
-6. Access the application in your web browser at `http://localhost:8000`.
+5. Create a superuser: ```python manage.py createsuperuser```
+6. Run the Django development server: ```python manage.py runserver```
+7. Go to the admin site ```127.0.0.1:8000/admin``` and add your User to the admin group 
+8. Access the site @  ```127.0.0.1:8000```
 
 ## Usage
 
